@@ -14,6 +14,7 @@
 		7BBC4D881FE2671A00D05F56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BBC4D861FE2671A00D05F56 /* LaunchScreen.storyboard */; };
 		7BBC4D931FE2671B00D05F56 /* MyPediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC4D921FE2671B00D05F56 /* MyPediaTests.swift */; };
 		7BBC4D9E1FE2671B00D05F56 /* MyPediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC4D9D1FE2671B00D05F56 /* MyPediaUITests.swift */; };
+		F6EAC906200701FF00EE5188 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EAC905200701FF00EE5188 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		7BBC4D991FE2671B00D05F56 /* MyPediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBC4D9D1FE2671B00D05F56 /* MyPediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPediaUITests.swift; sourceTree = "<group>"; };
 		7BBC4D9F1FE2671B00D05F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6EAC905200701FF00EE5188 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		7BBC4D7C1FE2671A00D05F56 /* MyPedia */ = {
 			isa = PBXGroup;
 			children = (
+				F6EAC904200701CB00EE5188 /* New Group */,
 				7BBC4D7D1FE2671A00D05F56 /* AppDelegate.swift */,
 				7BBC4D7F1FE2671A00D05F56 /* ViewController.swift */,
 				7BBC4D811FE2671A00D05F56 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				7BBC4D9F1FE2671B00D05F56 /* Info.plist */,
 			);
 			path = MyPediaUITests;
+			sourceTree = "<group>";
+		};
+		F6EAC904200701CB00EE5188 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				F6EAC905200701FF00EE5188 /* Storyboard.storyboard */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BBC4D881FE2671A00D05F56 /* LaunchScreen.storyboard in Resources */,
+				F6EAC906200701FF00EE5188 /* Storyboard.storyboard in Resources */,
 				7BBC4D851FE2671A00D05F56 /* Assets.xcassets in Resources */,
 				7BBC4D831FE2671A00D05F56 /* Main.storyboard in Resources */,
 			);
