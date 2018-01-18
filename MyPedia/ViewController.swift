@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func addButton(_ sender: Any) {
+        let searchTag = UserDefaults.standard
+        let searchTitle = UserDefaults.standard
+        searchTag.set("", forKey:"タグ")
+        searchTitle.set("", forKey:"タイトル")
+    }
+    
+    
 }
 
