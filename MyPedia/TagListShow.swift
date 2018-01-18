@@ -1,27 +1,27 @@
 //
-//  tag_list_show.swift
+//  TagListShow.swift
 //  MyPedia
 //
-//  Created by iha moritaka on 2018/01/11.
+//  Created by iha moritaka on 2018/01/18.
 //  Copyright © 2018年 jp.ac.uryukyu.ie.e16530. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class tag_list_show: UIViewController,UITableViewDelegate, UITableViewDataSource
+class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet var TableView: UITableView!
     
-    var selectedText: String?
     let defaults = UserDefaults.standard
+    var selectedText: String?
     var taglist: Array<String> = []
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        defaults.set(["tag1", "tag2"], forKey:"tagList")
+        defaults.set(["title1", "title2"], forKey:"tag1")
         //ここで他からの配列を読み込む
         if let aaa = defaults.object(forKey: "tagList") {
             taglist = aaa as! Array<String>
@@ -32,6 +32,7 @@ class tag_list_show: UIViewController,UITableViewDelegate, UITableViewDataSource
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taglist.count
     }
@@ -59,6 +60,7 @@ class tag_list_show: UIViewController,UITableViewDelegate, UITableViewDataSource
         performSegue(withIdentifier: "totitle_list_show",sender: nil)
         
     }
-   
+    
 }
+
 

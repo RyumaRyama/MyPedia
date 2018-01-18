@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tag list show-->
+        <!--Tag List Show-->
         <scene sceneID="Cup-xV-tWl">
             <objects>
-                <viewController id="4E9-1N-8V8" customClass="tag_list_show" sceneMemberID="viewController">
+                <viewController id="4E9-1N-8V8" customClass="TagListShow" customModule="MyPedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6QT-Dx-hG6">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,8 +33,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="4E9-1N-8V8" id="u72-S3-WQK"/>
-                                    <outlet property="delegate" destination="4E9-1N-8V8" id="AhS-Fw-ryE"/>
+                                    <outlet property="dataSource" destination="4E9-1N-8V8" id="vOU-6V-K6p"/>
+                                    <outlet property="delegate" destination="4E9-1N-8V8" id="fo0-HH-q07"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タグリスト一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjh-mw-mpT">
@@ -54,8 +54,8 @@
                         <viewLayoutGuide key="safeArea" id="70g-mY-zg3"/>
                     </view>
                     <connections>
-                        <outlet property="TableView" destination="Mla-uP-DGc" id="8uR-w0-vQR"/>
-                        <segue destination="mcK-fO-cuU" kind="show" identifier="totitle_list_show" id="aXe-gM-TKN"/>
+                        <outlet property="TableView" destination="Mla-uP-DGc" id="UGa-qd-C5g"/>
+                        <segue destination="mcK-fO-cuU" kind="show" identifier="totitle_list_show" id="9gP-Eu-gCg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hz6-7e-jVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,7 +65,7 @@
         <!--Title list show-->
         <scene sceneID="CXW-97-nPJ">
             <objects>
-                <viewController id="mcK-fO-cuU" customClass="title_list_show" sceneMemberID="viewController">
+                <viewController id="mcK-fO-cuU" customClass="title_list_show" customModule="MyPedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ukK-33-n6G">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,8 +85,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="mcK-fO-cuU" id="Qlj-VD-yWI"/>
-                                    <outlet property="delegate" destination="mcK-fO-cuU" id="ec7-Tb-rOU"/>
+                                    <outlet property="dataSource" destination="mcK-fO-cuU" id="JSy-vv-NMW"/>
+                                    <outlet property="delegate" destination="mcK-fO-cuU" id="nco-Y2-asv"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbg-lC-dxY">
@@ -106,8 +106,8 @@
                         <viewLayoutGuide key="safeArea" id="rcs-Id-GAI"/>
                     </view>
                     <connections>
-                        <outlet property="Label" destination="InF-CK-qfS" id="smb-GI-fIb"/>
-                        <outlet property="title_TableView" destination="5yo-WO-pU4" id="Pe3-gm-vl6"/>
+                        <outlet property="Label" destination="InF-CK-qfS" id="xbd-6Y-OPV"/>
+                        <outlet property="title_TableView" destination="5yo-WO-pU4" id="Esg-23-sDn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxh-8K-5Wa" userLabel="First Responder" sceneMemberID="firstResponder"/>
