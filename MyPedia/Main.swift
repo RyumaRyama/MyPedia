@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Main: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addButton(_ sender: Any) {
-        let searchTag = UserDefaults.standard
-        let searchTitle = UserDefaults.standard
-        searchTag.set("", forKey:"タグ")
-        searchTitle.set("", forKey:"タイトル")
+        let defaults = UserDefaults.standard
+        defaults.set("", forKey:"searchTag")
+        defaults.set("", forKey:"searchTitle")
     }
-    
     
 }
 
