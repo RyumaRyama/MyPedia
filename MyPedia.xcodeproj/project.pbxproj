@@ -103,6 +103,7 @@
 		7BBC4D7C1FE2671A00D05F56 /* MyPedia */ = {
 			isa = PBXGroup;
 			children = (
+				F6EAC904200701CB00EE5188 /* New Group */,
 				7BBC4D7D1FE2671A00D05F56 /* AppDelegate.swift */,
 				7BBC4D7F1FE2671A00D05F56 /* Main.swift */,
 				7BBC4D811FE2671A00D05F56 /* Main.storyboard */,
@@ -110,6 +111,7 @@
 				A0D41D692007248400CB3DD0 /* title_list_show.swift */,
 				A073F43820106AF300275922 /* TagListShow.swift */,
 				7BBC4D841FE2671A00D05F56 /* Assets.xcassets */,
+				F604B63E201685F100894FD6 /* e165712ViewController.swift */,
 				7BBC4D861FE2671A00D05F56 /* LaunchScreen.storyboard */,
 				7BBC4D891FE2671A00D05F56 /* Info.plist */,
 			);
@@ -132,6 +134,13 @@
 				7BBC4D9F1FE2671B00D05F56 /* Info.plist */,
 			);
 			path = MyPediaUITests;
+			sourceTree = "<group>";
+		};
+		F6EAC904200701CB00EE5188 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyPedia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.uryukyu.ie.e16530.MyPedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyPedia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.uryukyu.ie.e16530.MyPedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
