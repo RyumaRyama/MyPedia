@@ -13,6 +13,7 @@ class Show: UIViewController {
     var text:String?
     var titles:[String]?
     var titleName:String?
+    var tag:String?
     
     @IBOutlet weak var textView: UITextView!
     
@@ -26,7 +27,7 @@ class Show: UIViewController {
         textView.layer.cornerRadius = 5.0;
         
         
-        let tag:String? = defaults.string(forKey: "searchTag")
+        tag = defaults.string(forKey: "searchTag")
         titles = defaults.object(forKey: tag!) as? [String]
         titleName = defaults.string(forKey: "searchTitle")
         text = defaults.string(forKey: titleName!)
@@ -55,6 +56,7 @@ class Show: UIViewController {
         if(deleteNum != -1){
             defaults.removeObject(forKey: titleName!)
             titles!.remove(at: deleteNum)
+            defaults.set(titles!, forKey: tag!)
         }
     }
 }
