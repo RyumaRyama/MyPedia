@@ -9,7 +9,8 @@
 import UIKit
 
 class e165712ViewController: UIViewController, UITextFieldDelegate{
-
+    
+    var tags: [String] = []
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var label: UILabel!
     let userDefaults = UserDefaults.standard
@@ -19,9 +20,16 @@ class e165712ViewController: UIViewController, UITextFieldDelegate{
         //デリゲート先を自分に設定する
         textfield.delegate = self
         
-        //文字列が保存されている場合はラベルに文字列を設定する。
-        if let tagList = userDefaults.string(forKey:"tagList") {
-            label.text = tagList
+        if (userDefaults.array(forKey:"tagList") != nil){
+        //objectsを配列として確定させ、前回の保存内容を格納
+            let objects = userDefaults.array(forKey:"tagList")
+            //各名前を格納するための変数を宣言
+            var name:String
+            //前回の保存内容が格納された配列の中身を一つずつ取り出す
+            for name in objects!{
+                //配列に追加していく
+                tags.append(String(describing: name))
+            }
         }
         // Do any additional setup after loading the view.
     }
@@ -34,14 +42,13 @@ class e165712ViewController: UIViewController, UITextFieldDelegate{
 
     @IBAction func kettei(_ sender: Any) {
         //テキストフィールドの文字列をラベルに設定する。
-        label.text = textfield.text
-        
-        //ラベルの文字列を保存する。
-        userDefaults.set(label.text, forKey:"tagList")
-        
-        //plistファイルへの出力と同期する。
+        label.text = tags[0] + tags[1]
+        tags.append(String(describing: textfield.text))
+        userDefaults.set(tags, forKey:"tagList")
         userDefaults.synchronize()
     }
+    
+    
     /*
     // MARK: - Navigation
 
