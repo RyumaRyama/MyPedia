@@ -8,15 +8,18 @@
 
 import UIKit
 
-class e165712ViewController: UIViewController, UITextFieldDelegate{
+class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource{
     
+    @IBOutlet weak var table: UITableView!
     var tags: [String] = []
     @IBOutlet weak var textfield: UITextField!
-    @IBOutlet weak var label: UILabel!
     let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        table.delegate = self
+        table.dataSource = self
         //デリゲート先を自分に設定する
         textfield.delegate = self
         
@@ -38,11 +41,20 @@ class e165712ViewController: UIViewController, UITextFieldDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return tags.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        // セルの型を作る
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "tagList")
+        // セルに表示するテキストを作る
+        cell.textLabel?.text = tags[indexPath.row]
+        // セルをリターンする
+        return cell
+    }
 
     @IBAction func kettei(_ sender: Any) {
-        //テキストフィールドの文字列をラベルに設定する。
-        label.text = tags[0] + tags[1]
         tags.append(String(describing: textfield.text))
         userDefaults.set(tags, forKey:"tagList")
         userDefaults.synchronize()
