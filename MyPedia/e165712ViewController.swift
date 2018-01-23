@@ -27,7 +27,7 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
         //objectsを配列として確定させ、前回の保存内容を格納
             let objects = userDefaults.array(forKey:"tagList")
             //各名前を格納するための変数を宣言
-            var name:String
+            var name:String!
             //前回の保存内容が格納された配列の中身を一つずつ取り出す
             for name in objects!{
                 //配列に追加していく
@@ -55,7 +55,7 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
     }
 
     @IBAction func kettei(_ sender: Any) {
-        tags.append(String(describing: textfield.text))
+        tags.append(String(describing: textfield.text!))
         userDefaults.set(tags, forKey:"tagList")
         userDefaults.synchronize()
     }
