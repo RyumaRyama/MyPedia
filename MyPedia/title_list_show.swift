@@ -28,8 +28,9 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
             text = ccc as! String
         }
         //textつまり前の画面で選択されたワードのリストを持ってきてtitlelistにいれる
-        titlelist = defaults.object(forKey: text) as! Array<String>
-        
+        if let aaa = defaults.object(forKey: text) {
+            titlelist = aaa as! Array<String>
+        }
         //ラベルに前画面で選択されたワード表示
         Label.text = text
     }

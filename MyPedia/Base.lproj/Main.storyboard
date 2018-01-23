@@ -76,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qmU-Ld-kog">
-                                <rect key="frame" x="20" y="173" width="728" height="831"/>
+                                <rect key="frame" x="20" y="173" width="728" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uY6-u0-9Lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3936.71875" y="-690.234375"/>
+            <point key="canvasLocation" x="4475" y="10.546875"/>
         </scene>
         <!--Title list show-->
         <scene sceneID="CXW-97-nPJ">
@@ -151,9 +151,6 @@
                                 <rect key="frame" x="310" y="921" width="148" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" title="タイトル追加"/>
-                                <connections>
-                                    <segue destination="Ugd-Q2-GkI" kind="show" id="llB-xT-QSJ"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InF-CK-qfS">
                                 <rect key="frame" x="0.0" y="20" width="768" height="182"/>
@@ -169,11 +166,12 @@
                     <connections>
                         <outlet property="Label" destination="InF-CK-qfS" id="xbd-6Y-OPV"/>
                         <outlet property="title_TableView" destination="5yo-WO-pU4" id="Esg-23-sDn"/>
+                        <segue destination="Ugd-Q2-GkI" kind="show" identifier="tocontent_show" id="aeu-3N-B8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxh-8K-5Wa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3776.5625" y="0.5859375"/>
+            <point key="canvasLocation" x="3561" y="11"/>
         </scene>
         <!--Tag List Show-->
         <scene sceneID="Cup-xV-tWl">

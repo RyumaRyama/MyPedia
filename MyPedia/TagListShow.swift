@@ -21,7 +21,9 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         defaults.set(["tag1", "tag2"], forKey:"tagList")
-        defaults.set(["title1", "title2"], forKey:"tag1")
+        defaults.removeObject(forKey: "tag1")
+        //defaults.set(["title1", "title2"], forKey:"tag1")
+        //defaults.set("test", forKey:"title1")
         //ここで他からの配列を読み込む
         if let aaa = defaults.object(forKey: "tagList") {
             taglist = aaa as! Array<String>

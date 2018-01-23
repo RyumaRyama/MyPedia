@@ -20,14 +20,10 @@ class Show: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.isEditable = false
         textView.layer.borderColor = UIColor.black.cgColor
         textView.layer.borderWidth = 0.5
         textView.layer.cornerRadius = 5.0;
-        
-        defaults.set("タグ", forKey: "searchTag")
-        defaults.set(["タイトル", "タイトル2", "タイトル3", "タイトル4"], forKey: "タグ")
-        defaults.set("タイトル", forKey: "searchTitle")
-        defaults.set("内容", forKey: "タイトル")
         
         
         let tag:String? = defaults.string(forKey: "searchTag")
@@ -38,8 +34,6 @@ class Show: UIViewController {
         textView.text=text
         label.text=titleName
         
-        print(defaults.string(forKey: titleName!)!)
-        print(titles!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +56,5 @@ class Show: UIViewController {
             defaults.removeObject(forKey: titleName!)
             titles!.remove(at: deleteNum)
         }
-        print(defaults.string(forKey: titleName!))
-        print(titles!)
     }
 }
