@@ -54,6 +54,13 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
         return cell
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tags.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     @IBAction func kettei(_ sender: Any) {
         tags.append(String(describing: textfield.text!))
         userDefaults.set(tags, forKey:"tagList")
