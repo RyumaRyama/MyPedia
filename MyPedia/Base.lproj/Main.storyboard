@@ -1,15 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="HCi-0E-Rxp">
+            <objects>
+                <tableViewController id="G0d-GL-z4g" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pJa-g3-IAb">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableFooterView" contentMode="redraw" id="RII-7x-GIZ">
+                            <rect key="frame" x="0.0" y="72" width="768" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="G0d-GL-z4g" id="8oX-DV-wYG"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8Cb-ol-3S6">
+                                <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Cb-ol-3S6" id="qfB-Ab-BEj">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhB-5d-cT8">
+                                            <rect key="frame" x="298" y="-1" width="138" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="G0d-GL-z4g" id="5C7-J5-uFz"/>
+                            <outlet property="delegate" destination="G0d-GL-z4g" id="xaP-ec-Fds"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="EEp-Nu-b85" id="oG0-11-Nnq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXE-kY-PTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="3Gq-aM-2aM">
+                    <connections>
+                        <outlet property="delegate" destination="G0d-GL-z4g" id="YOt-LQ-NM7"/>
+                        <outlet property="searchContentsController" destination="G0d-GL-z4g" id="m4e-Fu-Wk2"/>
+                        <outlet property="searchResultsDataSource" destination="G0d-GL-z4g" id="508-U0-Yjk"/>
+                        <outlet property="searchResultsDelegate" destination="G0d-GL-z4g" id="5j3-yO-VLt"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="ELp-fi-iu6">
+                    <connections>
+                        <outlet property="delegate" destination="G0d-GL-z4g" id="eLe-Eg-mbP"/>
+                        <outlet property="searchContentsController" destination="G0d-GL-z4g" id="uuV-Gv-uLU"/>
+                        <outlet property="searchResultsDataSource" destination="G0d-GL-z4g" id="0Xr-U4-x4e"/>
+                        <outlet property="searchResultsDelegate" destination="G0d-GL-z4g" id="F4u-gt-cQY"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="EEp-Nu-b85">
+                    <connections>
+                        <outlet property="delegate" destination="G0d-GL-z4g" id="jX3-mt-utu"/>
+                        <outlet property="searchBar" destination="RII-7x-GIZ" id="COT-Dz-1g4"/>
+                        <outlet property="searchContentsController" destination="G0d-GL-z4g" id="UpZ-Xq-HKc"/>
+                        <outlet property="searchResultsDataSource" destination="G0d-GL-z4g" id="23Y-67-YcK"/>
+                        <outlet property="searchResultsDelegate" destination="G0d-GL-z4g" id="vTd-Ue-CyY"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="3319.53125" y="-2220.1171875"/>
+        </scene>
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,14 +88,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCq-4s-A5P">
-                                <rect key="frame" x="262" y="395" width="244" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="100"/>
-                                <state key="normal" title="検索">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12L-NE-tYS">
                                 <rect key="frame" x="262" y="597" width="244" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,6 +114,14 @@
                                 <color key="textColor" red="0.97586762569999996" green="0.97586762569999996" blue="0.97586762569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCq-4s-A5P">
+                                <rect key="frame" x="262" y="406" width="244" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="100"/>
+                                <state key="normal" title="検索">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.86510059930000005" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.86510059930000005" colorSpace="custom" customColorSpace="sRGB"/>
@@ -336,7 +406,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4iP-uf-Ld7"/>
-        <segue reference="obl-vV-IJS"/>
+        <segue reference="GBg-NX-6TO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
