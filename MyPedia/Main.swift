@@ -13,10 +13,23 @@ class Main: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //defaults.set(["title1", "title2"], forKey: "tag")
-        //defaults.set("内容", forKey:"title1")
-        //defaults.set("内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n", forKey:"title2")
+        /*
+        var taglist: Array<String>?
+        var titlelist: Array<String>?
+        if let aaa = defaults.object(forKey: "tagList") {
+            taglist = aaa as! Array<String>
+        }
+        for tag in taglist!{
+            if let aaa = defaults.object(forKey: tag) {
+                titlelist = aaa as! Array<String>
+            }
+            for title in titlelist!{
+                defaults.removeObject(forKey: title)
+            }
+            defaults.removeObject(forKey: tag)
+        }
+        defaults.removeObject(forKey: "tagList")
+ */
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +38,6 @@ class Main: UIViewController {
     }
 
     @IBAction func addButton(_ sender: Any) {
-        let defaults = UserDefaults.standard
         defaults.set("", forKey:"searchTag")
         defaults.set("", forKey:"searchTitle")
     }
