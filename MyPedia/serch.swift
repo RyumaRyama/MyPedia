@@ -4,7 +4,7 @@
 //
 //  Created by 澤岻　成弥 on 2018/01/25.
 //  Copyright © 2018年 jp.ac.uryukyu.ie.e16530. All rights reserved.
-//
+//  puched2/1
 
 import Foundation
 import UIKit

@@ -19,6 +19,7 @@
 		B4C26BE1201644E600E19A30 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26BE0201644E600E19A30 /* Show.swift */; };
 		F604B63F201685F100894FD6 /* e165712ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F604B63E201685F100894FD6 /* e165712ViewController.swift */; };
 		FA36A3AD2019828300AA8526 /* serch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36A3AC2019828200AA8526 /* serch.swift */; };
+		FA3F04D32022A24300AABDB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F04D22022A24300AABDB6 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B4C26BE0201644E600E19A30 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		F604B63E201685F100894FD6 /* e165712ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e165712ViewController.swift; sourceTree = "<group>"; };
 		FA36A3AC2019828200AA8526 /* serch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serch.swift; sourceTree = "<group>"; };
+		FA3F04D22022A24300AABDB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				7BBC4D861FE2671A00D05F56 /* LaunchScreen.storyboard */,
 				7BBC4D891FE2671A00D05F56 /* Info.plist */,
 				FA36A3AC2019828200AA8526 /* serch.swift */,
+				FA3F04D22022A24300AABDB6 /* ViewController.swift */,
 			);
 			path = MyPedia;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				B4C26BE1201644E600E19A30 /* Show.swift in Sources */,
 				F604B63F201685F100894FD6 /* e165712ViewController.swift in Sources */,
 				7BBC4D7E1FE2671A00D05F56 /* AppDelegate.swift in Sources */,
+				FA3F04D32022A24300AABDB6 /* ViewController.swift in Sources */,
 				FA36A3AD2019828300AA8526 /* serch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
