@@ -185,7 +185,7 @@
                                 <state key="normal" title="決定"/>
                                 <connections>
                                     <action selector="decision:" destination="Cdh-1r-AzJ" eventType="touchUpInside" id="kXZ-ab-iMs"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="SGP-fQ-FaF"/>
+                                    <segue destination="Ugd-Q2-GkI" kind="show" id="sSg-ru-IOS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-Mg-vMi">
@@ -425,8 +425,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="5Nb-BC-RSn"/>
-        <segue reference="aBP-Sy-L6C"/>
-        <segue reference="obl-vV-IJS"/>
+        <segue reference="Td4-ch-0dc"/>
+        <segue reference="sSg-ru-IOS"/>
+        <segue reference="rcW-hh-vr4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
