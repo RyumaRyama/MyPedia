@@ -53,6 +53,18 @@
                                 <color key="textColor" red="0.97586762569999996" green="0.97586762569999996" blue="0.97586762569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12L-NE-tYS">
+                                <rect key="frame" x="262" y="591" width="244" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="90"/>
+                                <state key="normal" title="追加">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Apm-bk-405"/>
+                                    <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bAj-F0-yRk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.86510059930000005" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.86510059930000005" colorSpace="custom" customColorSpace="sRGB"/>
