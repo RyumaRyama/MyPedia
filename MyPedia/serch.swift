@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 //元々の配列
-var list = ["tagList"]
+var list = ["hage","hugahore"]
 //検索結果の配列
 var searchResult = [String]()
 class TableViewController: UITableViewController, UISearchBarDelegate{
