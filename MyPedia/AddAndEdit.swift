@@ -14,37 +14,19 @@ class AddAndEdit: UIViewController {
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var textView: UITextView!
     
-    var add: Bool = false
-    var titleList: Array<String> = []
-    
+    var selectTag: String?
+    var selectTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //タグ，タイトルの読み込み
-        tagText.text = defaults.string(forKey: "searchTag")
-        titleText.text = defaults.string(forKey: "searchTitle")
-        //タグ，タイトルの表示
-        textView.text = defaults.string(forKey: titleText.text!)
-        textView.text = defaults.string(forKey: titleText.text!)
+        selectTag = defaults.string(forKey: "searchTag")!
+        selectTitle = defaults.string(forKey: "searchTitle")!
         
-        //タイトルリストを読み込んで，一時的にタイトルを削除
-        if let titles = defaults.object(forKey: "serchTag") {
-            titleList = titles as! Array<String>
-        }
-        
-        var i: Int = 0
-        var deleteNum: Int = -1
-        for title in titleList{
-            if(title == titleText.text){
-                deleteNum = i
-            }
-            i += 1
-        }
-        if(deleteNum != -1){
-            defaults.removeObject(forKey: titleText.text!)
-            titleList.remove(at: deleteNum)
-            defaults.set(titleList, forKey: tagText.text!)
-        }
+        //タグ，タイトル，内容の画面表示
+        tagText.text = selectTag
+        titleText.text = selectTitle
+        textView.text = defaults.string(forKey: tagText.text! + titleText.text!)
         
         // 枠のカラー
         textView.layer.borderColor = UIColor.black.cgColor
@@ -61,46 +43,46 @@ class AddAndEdit: UIViewController {
     }
     
     @IBAction func decision(_ sender: Any) {
-        //リストからタイトルとその内容を削除
-        defaults.removeObject(forKey: "sarchTitle")
-        
-        //タグにタイトルを追加
-        let addTag: String = tagText.text!
-        var tagList: Array<String> = []
-        if let tags = defaults.object(forKey: "tagList") {
-            tagList = tags as! Array<String>
-        }
-        if(tagList.count == 0){
-            tagList.append(addTag)
-            defaults.set(tagList, forKey: "tagList")
-        }
-        else if(tagList.index(of: addTag) == nil){
-            tagList.append(addTag)
-            defaults.set(tagList, forKey: "tagList")
+        //var tagList: Array<String> = []
+        //var titleList: Array<String> = []
+        //空白はNG
+        if(tagText.text != "" && titleText.text != ""){
+            //更新の時のみ一旦削除
+            if(selectTag != "" && selectTitle != ""){
+                delete(tag: selectTag!, title: selectTitle!)
+            }
+            
+            
         }
         
-        //内容の追加
-        let addTitle: String = titleText.text!/*
-        if let titles = defaults.object(forKey: tagText.text!) {
-            titleList = titles as! Array<String>
-        }*/
-        if(titleList.count == 0){
-            titleList.append(addTitle)
-            defaults.set(titleList, forKey: addTag)
-            defaults.set(textView.text, forKey: addTitle)
-        }
-        else if(titleList.index(of: addTitle) == nil){
-            titleList.append(addTitle)
-            defaults.set(titleList, forKey: addTag)
-            defaults.set(textView.text, forKey: addTitle)
-        }
-        else{
-            print("Title collide")
-        }
         
         // 遷移後に表示させる
         defaults.set(tagText.text, forKey: "searchTag")
         defaults.set(titleText.text, forKey: "searchTitle")
     }
     
+    //内容を消すやつ
+    func delete(tag: String, title: String){
+        //タグリスト，タイトルリスト取得
+        var tagList: Array<String> = defaults.array(forKey: "tagList") as! Array<String>
+        var titleList: Array<String> = defaults.array(forKey: tag) as! Array<String>
+        
+        //内容
+        defaults.removeObject(forKey: title)
+        //タイトル
+        if let index = titleList.index(of: title){
+            titleList.remove(at: index)
+            //タグの中にタイトルがなければタグを削除
+            if(titleList.count == 0){
+                if let tagIndex = tagList.index(of: tag){
+                    tagList.remove(at: tagIndex)
+                    defaults.set(tagList, forKey: "tagList")
+                }
+            }
+            //タイトルがまだあればdefaultsに格納
+            else{
+                defaults.set(titleList, forKey: tag)
+            }
+        }
+    }
 }

@@ -14,26 +14,14 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
-        if let bundleId = Bundle.main.bundleIdentifier {
-            UserDefaults.standard.removePersistentDomain(forName: bundleId)
-        }
-        
-        var taglist: Array<String>?
-        var titlelist: Array<String>?
-        if let aaa = defaults.object(forKey: "tagList") {
-            taglist = aaa as! Array<String>
-        }
-        for tag in taglist!{
-            if let aaa = defaults.object(forKey: tag) {
-                titlelist = aaa as! Array<String>
-            }
-            for title in titlelist!{
-                defaults.removeObject(forKey: title)
-            }
-            defaults.removeObject(forKey: tag)
-        }
-        defaults.removeObject(forKey: "tagList")
-        */
+        defaults.set(["タグ1", "タグ2"], forKey: "tagList")
+        defaults.set(["タイトル1", "タイトル2", "タイトル3"], forKey: "タグ1")
+        defaults.set(["タイトル1"], forKey: "タグ2")
+        defaults.set("タイトル1だよ〜", forKey: "タグ1タイトル1")
+        defaults.set("タイトル2だよ〜", forKey: "タグ1タイトル2")
+        defaults.set("タイトル3だよ〜", forKey: "タグ1タイトル3")
+        defaults.set("フハハ\nタイトル1だよ〜", forKey: "タグ2タイトル1")
+ */
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +32,12 @@ class Main: UIViewController {
     @IBAction func addButton(_ sender: Any) {
         defaults.set("", forKey:"searchTag")
         defaults.set("", forKey:"searchTitle")
+    }
+    
+    @IBAction func allDelete(_ sender: Any) {
+        if let bundleId = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleId)
+        }
     }
     
 }
