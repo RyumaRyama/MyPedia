@@ -108,7 +108,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVl-1W-bhi">
-                                <rect key="frame" x="0.0" y="180" width="768" height="60"/>
+                                <rect key="frame" x="0.0" y="182" width="768" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -123,6 +123,13 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Des-Kf-pqO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEZ-BP-36C">
+                                <rect key="frame" x="0.0" y="143" width="768" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="DVI-TZ-PX8"/>
@@ -130,12 +137,13 @@
                     <navigationItem key="navigationItem" title="Title" id="cUv-IS-iKc"/>
                     <connections>
                         <outlet property="label" destination="AVl-1W-bhi" id="9FI-rr-eKA"/>
+                        <outlet property="tagView" destination="eEZ-BP-36C" id="lem-fE-Smz"/>
                         <outlet property="textView" destination="qmU-Ld-kog" id="w6S-SS-YYR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uY6-u0-9Lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4513" y="387"/>
+            <point key="canvasLocation" x="4512.5" y="386.71875"/>
         </scene>
         <!--Add And Edit-->
         <scene sceneID="Vgq-7l-TyU">
@@ -347,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hz6-7e-jVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2742" y="-77"/>
+            <point key="canvasLocation" x="3052" y="-316"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dNL-Ur-id5">
@@ -498,15 +506,14 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="5333" y="-646"/>
+            <point key="canvasLocation" x="5227" y="-682"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aNm-yL-KsW"/>
-        <segue reference="4iP-uf-Ld7"/>
-        <segue reference="aBP-Sy-L6C"/>
+        <segue reference="5Nb-BC-RSn"/>
+        <segue reference="Td4-ch-0dc"/>
         <segue reference="aeu-3N-B8K"/>
-        <segue reference="pBj-SC-ff0"/>
+        <segue reference="q0y-6N-A8k"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

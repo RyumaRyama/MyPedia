@@ -14,6 +14,10 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
+        if let bundleId = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleId)
+        }
+        
         var taglist: Array<String>?
         var titlelist: Array<String>?
         if let aaa = defaults.object(forKey: "tagList") {

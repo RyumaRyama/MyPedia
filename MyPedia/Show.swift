@@ -16,7 +16,7 @@ class Show: UIViewController {
     var tag:String?
     
     @IBOutlet weak var textView: UITextView!
-    
+    @IBOutlet weak var tagView: UILabel!
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class Show: UIViewController {
         titleName = defaults.string(forKey: "searchTitle")
         text = defaults.string(forKey: titleName!)
         
+        tagView.text=tag
         textView.text=text
         label.text=titleName
         
