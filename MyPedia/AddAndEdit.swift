@@ -53,6 +53,7 @@ class AddAndEdit: UIViewController {
                     tagList.append(addTag)
                     defaults.set(tagList, forKey: "tagList")
                 }
+               
                 
                 //タイトルの追加
                 let addTitle: String = titleText.text!
@@ -70,11 +71,64 @@ class AddAndEdit: UIViewController {
                     defaults.set(titleList, forKey: addTag)
                     defaults.set(textView.text, forKey: addTitle)
                 }
+                
             }
             else{
                 defaults.set(textView.text, forKey: titleText.text!)
             }
         }
+    }
+    
+    // タグリストの配列とテキストボックスの内容が一致すればfalseを返し、同じ内容は追加されずアラートが発生する。
+    func tag_judgment(addTag: String , tagList: Array<String>) -> Bool {
+        for data in tagList{
+            if (addTag == String(describing: data)){
+                // UIAlertController
+                let alertController: UIAlertController =
+                    UIAlertController(title: "Alert",
+                                      message: "すでに同じ名前のタグが存在します",
+                                      preferredStyle: .alert)
+                
+                let actionOK = UIAlertAction(title: "OK", style: .default){
+                    action in
+                    print("OK")
+                }
+                
+                // actionを追加
+                alertController.addAction(actionOK)
+                
+                // UIAlertControllerの起動
+                //present(alertController, animated: true, completion: nil)
+                return false
+            }
+        }
+        return true
+    }
+    
+    // タイトルリストの配列とテキストボックスの内容が一致すればfalseを返し、同じ内容は追加されずアラートが発生する。
+    func title_judgment(addTitle: String , titleList: Array<String>) -> Bool {
+        for data in titleList{
+            if (addTitle == String(describing: data)){
+                // UIAlertController
+                let alertController: UIAlertController =
+                    UIAlertController(title: "Alert",
+                                      message: "すでに同じ名前のタイトルが存在します",
+                                      preferredStyle: .alert)
+                
+                let actionOK = UIAlertAction(title: "OK", style: .default){
+                    action in
+                    print("OK")
+                }
+                
+                // actionを追加
+                alertController.addAction(actionOK)
+                
+                // UIAlertControllerの起動
+                //present(alertController, animated: true, completion: nil)
+                return false
+            }
+        }
+        return true
     }
     
 }
