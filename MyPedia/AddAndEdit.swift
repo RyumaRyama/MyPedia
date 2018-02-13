@@ -47,15 +47,22 @@ class AddAndEdit: UIViewController {
         //var titleList: Array<String> = []
         //空白はNG
         if(tagText.text != "" && titleText.text != ""){
-            //更新の時のみ一旦削除
-            if(selectTag != "" && selectTitle != ""){
-                delete(tag: selectTag!, title: selectTitle!)
+            //重複がなければ実行
+            if repeatCheck(){
+                //更新の時のみ一旦削除
+                if(selectTag != "" && selectTitle != ""){
+                    delete(tag: selectTag!, title: selectTitle!)
+                }
+                //被りがない時だけメモの保存
+                write(tag: tagText.text!, title: titleText.text!, text: textView.text!)
             }
-            
-            
+            else{
+                print("タイトルが重複しています")
+            }
         }
-        
-        
+        else{
+            print("タグ，タイトルは空白で保存できません")
+        }
         // 遷移後に表示させる
         defaults.set(tagText.text, forKey: "searchTag")
         defaults.set(titleText.text, forKey: "searchTitle")
@@ -68,10 +75,11 @@ class AddAndEdit: UIViewController {
         var titleList: Array<String> = defaults.array(forKey: tag) as! Array<String>
         
         //内容
-        defaults.removeObject(forKey: title)
+        defaults.removeObject(forKey: tag+title)
         //タイトル
         if let index = titleList.index(of: title){
             titleList.remove(at: index)
+            defaults.set(titleList, forKey: tag)
             //タグの中にタイトルがなければタグを削除
             if(titleList.count == 0){
                 if let tagIndex = tagList.index(of: tag){
@@ -79,10 +87,44 @@ class AddAndEdit: UIViewController {
                     defaults.set(tagList, forKey: "tagList")
                 }
             }
-            //タイトルがまだあればdefaultsに格納
-            else{
-                defaults.set(titleList, forKey: tag)
-            }
         }
+    }
+    
+    //保存するやつ
+    func write(tag: String, title: String, text: String){
+        print("保存〜")
+        //内容
+        defaults.set(text, forKey: tag+title)
+        //タイトル
+        var titleList: Array<String> = []
+        if let list = defaults.array(forKey: tag){
+            titleList = list as! Array<String>
+        }
+        titleList.append(title)
+        defaults.set(titleList, forKey: tag)
+        //タグ
+        var tagList: Array<String> = []
+        if let list = defaults.array(forKey: "tagList"){
+            tagList = list as! Array<String>
+        }
+        if(tagList.index(of: tag) == nil){
+            tagList.append(tag)
+            defaults.set(tagList, forKey: "tagList")
+        }
+    }
+    
+    //重複確認
+    func repeatCheck() -> Bool{
+        //タグ内に同じものあったら消さない
+        var nextTitleList: Array<String> = []
+        if let list = defaults.array(forKey: tagText.text!){
+            nextTitleList = list as! Array<String>
+        }
+        //同じものがあればfalse
+        if(nextTitleList.index(of: titleText.text!) != nil){
+            return false
+        }
+        //なければtrue
+        return true
     }
 }

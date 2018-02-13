@@ -70,7 +70,7 @@ class Show: UIViewController {
         var titleList: Array<String> = defaults.array(forKey: tag) as! Array<String>
         
         //内容
-        defaults.removeObject(forKey: title)
+        defaults.removeObject(forKey: tag+title)
         //タイトル
         if let index = titleList.index(of: title){
             titleList.remove(at: index)
