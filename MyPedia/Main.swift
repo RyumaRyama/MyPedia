@@ -13,6 +13,8 @@ class Main: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaults.set("", forKey:"searchTag")
+        defaults.set("", forKey:"searchTitle")
         /*
         defaults.set(["タグ1", "タグ2"], forKey: "tagList")
         defaults.set(["タイトル1", "タイトル2", "タイトル3"], forKey: "タグ1")
@@ -29,15 +31,13 @@ class Main: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func addButton(_ sender: Any) {
-        defaults.set("", forKey:"searchTag")
-        defaults.set("", forKey:"searchTitle")
-    }
     
     @IBAction func allDelete(_ sender: Any) {
         if let bundleId = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: bundleId)
         }
+        defaults.set("", forKey:"searchTag")
+        defaults.set("", forKey:"searchTitle")
     }
     
 }

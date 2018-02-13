@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B07FB642031ADCA004E023A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BBC4D841FE2671A00D05F56 /* Assets.xcassets */; };
+		7B3A468B2032CEB100D116D0 /* nicomoji-plus_1.11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B3A468A2032CEAF00D116D0 /* nicomoji-plus_1.11.ttf */; };
 		7B891FFA20197B3800E55BEC /* AddAndEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B891FF920197B3800E55BEC /* AddAndEdit.swift */; };
 		7BBC4D7E1FE2671A00D05F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC4D7D1FE2671A00D05F56 /* AppDelegate.swift */; };
 		7BBC4D801FE2671A00D05F56 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC4D7F1FE2671A00D05F56 /* Main.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B3A468A2032CEAF00D116D0 /* nicomoji-plus_1.11.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nicomoji-plus_1.11.ttf"; sourceTree = "<group>"; };
 		7B891FF920197B3800E55BEC /* AddAndEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEdit.swift; sourceTree = "<group>"; };
 		7BBC4D7A1FE2671A00D05F56 /* MyPedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBC4D7D1FE2671A00D05F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				FA36A3AC2019828200AA8526 /* serch.swift */,
 				FA3F04D22022A24300AABDB6 /* ViewController.swift */,
 				7B891FF920197B3800E55BEC /* AddAndEdit.swift */,
+				7B3A468A2032CEAF00D116D0 /* nicomoji-plus_1.11.ttf */,
 			);
 			path = MyPedia;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				7BBC4D881FE2671A00D05F56 /* LaunchScreen.storyboard in Resources */,
 				7B07FB642031ADCA004E023A /* Assets.xcassets in Resources */,
 				7BBC4D831FE2671A00D05F56 /* Main.storyboard in Resources */,
+				7B3A468B2032CEB100D116D0 /* nicomoji-plus_1.11.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
