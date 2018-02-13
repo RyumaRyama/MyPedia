@@ -9,12 +9,14 @@
 import UIKit
 
 class Show: UIViewController {
+    
     let defaults = UserDefaults.standard
     var text:String?
     var titles:[String]?
     var titleName:String?
     var tag:String?
     
+    @IBOutlet weak var linkList: UITableView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var tagView: UILabel!
     @IBOutlet weak var label: UILabel!
@@ -36,6 +38,18 @@ class Show: UIViewController {
         textView.text=text
         label.text=titleName
         
+        //枠づけ
+        // 枠のカラー
+        textView.layer.borderColor = UIColor.black.cgColor
+        linkList.layer.borderColor = UIColor.black.cgColor
+        // 枠の幅
+        textView.layer.borderWidth = 1
+        linkList.layer.borderWidth = 1
+        // 枠を角丸にする場合
+        textView.layer.cornerRadius = 10.0
+        textView.layer.masksToBounds = true
+        linkList.layer.cornerRadius = 10.0
+        linkList.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

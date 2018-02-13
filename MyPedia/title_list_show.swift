@@ -36,6 +36,15 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
         //ラベルに前画面で選択されたワード表示
         Label.text = text
         
+        
+        //枠づけ
+        // 枠のカラー
+        title_TableView.layer.borderColor = UIColor.black.cgColor
+        // 枠の幅
+        title_TableView.layer.borderWidth = 1
+        // 枠を角丸にする場合
+        title_TableView.layer.cornerRadius = 10.0
+        title_TableView.layer.masksToBounds = true
     }
     
     override func didReceiveMemoryWarning() {
