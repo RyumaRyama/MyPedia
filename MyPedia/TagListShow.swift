@@ -25,6 +25,15 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
         if let aaa = defaults.object(forKey: "tagList") {
             taglist = aaa as! Array<String>
         }
+        
+        //枠づけ
+        // 枠のカラー
+        TableView.layer.borderColor = UIColor.black.cgColor
+        // 枠の幅
+        TableView.layer.borderWidth = 1
+        // 枠を角丸にする場合
+        TableView.layer.cornerRadius = 10.0
+        TableView.layer.masksToBounds = true
     }
     
     override func didReceiveMemoryWarning() {

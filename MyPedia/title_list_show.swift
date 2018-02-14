@@ -22,17 +22,29 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //前の画面でセットされた文字を呼び出してtextにいれる
-        if let ccc = defaults.object(forKey: "searchTag") {
-            text = ccc as! String
+        if let ccc = defaults.string(forKey: "searchTag") {
+            text = ccc
         }
+        
         //textつまり前の画面で選択されたワードのリストを持ってきてtitlelistにいれる
+        
         if let aaa = defaults.object(forKey: text) {
             titlelist = aaa as! Array<String>
         }
+        
         //ラベルに前画面で選択されたワード表示
         Label.text = text
+        
+        
+        //枠づけ
+        // 枠のカラー
+        title_TableView.layer.borderColor = UIColor.black.cgColor
+        // 枠の幅
+        title_TableView.layer.borderWidth = 1
+        // 枠を角丸にする場合
+        title_TableView.layer.cornerRadius = 10.0
+        title_TableView.layer.masksToBounds = true
     }
     
     override func didReceiveMemoryWarning() {
