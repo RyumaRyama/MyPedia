@@ -55,10 +55,15 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
     }
 
     @IBAction func kettei(_ sender: Any) {
-        if (judgment()){
-        tags.append(String(describing: textfield.text!))
-        userDefaults.set(tags, forKey:"tagList")
-        userDefaults.synchronize()
+        if (judgment2()){
+            tags.append(String(describing: textfield.text!))
+            userDefaults.set(tags, forKey:"tagList")
+            userDefaults.synchronize()
+        }
+        else if(judgment()){
+            tags.append(String(describing: textfield.text!))
+            userDefaults.set(tags, forKey:"tagList")
+            userDefaults.synchronize()
         }
     }
     
@@ -87,6 +92,32 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
                 return false
             }
         }
+        return true
+    }
+    
+    func judgment2() -> Bool {
+        let textf = textfield.text!
+        let check = textf.replacingOccurrences(of: " ", with: "")
+        if (check.isEmpty){
+            // UIAlertController
+            let alertController: UIAlertController =
+                UIAlertController(title: "Alert",
+                                  message: "文字を入力してください",
+                                  preferredStyle: .alert)
+            
+            let actionOK = UIAlertAction(title: "OK", style: .default){
+                action in
+                print("OK")
+            }
+            
+            // actionを追加
+            alertController.addAction(actionOK)
+            
+            // UIAlertControllerの起動
+            present(alertController, animated: true, completion: nil)
+            return false
+        }
+    
         return true
     }
     

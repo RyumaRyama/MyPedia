@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyPedia/AddAndEdit.swift"
-            timestampString = "540122658.532289"
+            timestampString = "540140274.4334919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyPedia/AddAndEdit.swift"
-            timestampString = "540122658.532374"
+            timestampString = "540140274.43363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "tag_judgment(addTag:tagList:)"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "title_judgment(addTitle:titleList:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyPedia/AddAndEdit.swift"
-            timestampString = "540122658.532427"
+            filePath = "MyPedia/title_list_show.swift"
+            timestampString = "540140274.433687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "title_judgment(addTitle:titleList:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

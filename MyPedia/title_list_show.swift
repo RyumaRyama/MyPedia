@@ -16,7 +16,7 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var title_TableView: UITableView!
     
-    let defaults = UserDefaults.standard
+    let defaults2 = UserDefaults.standard
     var text=""
     var titlelist: Array<String> = []
     
@@ -24,15 +24,18 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         //前の画面でセットされた文字を呼び出してtextにいれる
-        if let ccc = defaults.object(forKey: "searchTag") {
-            text = ccc as! String
+        if let ccc = defaults2.object(forKey: "searchTag"){
+        self.text = ccc as! String
+        print("type ccc is ", type(of: ccc))
         }
+ 
         //textつまり前の画面で選択されたワードのリストを持ってきてtitlelistにいれる
-        if let aaa = defaults.object(forKey: text) {
-            titlelist = aaa as! Array<String>
-        }
+        if let aaa = defaults2.array(forKey: text){
+        print("type aaa is ", type(of: aaa))
+        self.titlelist = aaa as! Array<String>  //エラー個所
         //ラベルに前画面で選択されたワード表示
-        Label.text = text
+        Label.text = self.text
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,7 +60,7 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         
         // content_showに渡す文字列をセット
-        defaults.set(titlelist[indexPath.row],forKey:"searchTitle")
+        defaults2.set(titlelist[indexPath.row],forKey:"searchTitle")
         
         //押されたセルの選択解除
         if let indexPathForSelectedRow = title_TableView.indexPathForSelectedRow {
@@ -67,5 +70,6 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "tocontent_show",sender: nil)
         
     }
+   
 }
 

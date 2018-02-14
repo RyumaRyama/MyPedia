@@ -9,7 +9,7 @@
 import UIKit
 
 class Main: UIViewController {
-    let defaults = UserDefaults.standard
+    let defaults5 = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,8 @@ class Main: UIViewController {
     }
 
     @IBAction func addButton(_ sender: Any) {
-        defaults.set("", forKey:"searchTag")
-        defaults.set("", forKey:"searchTitle")
+        defaults5.set("", forKey:"searchTag")
+        defaults5.set("", forKey:"searchTitle")
     }
     
 }

@@ -13,7 +13,7 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet var TableView: UITableView!
     
-    let defaults = UserDefaults.standard
+    let defaults3 = UserDefaults.standard
     var selectedText: String?
     var taglist: Array<String> = []
     
@@ -22,7 +22,7 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
         // Do any additional setup after loading the view, typically from a nib.
         
         //ここで他からの配列を読み込む
-        if let aaa = defaults.object(forKey: "tagList") {
+        if let aaa = defaults3.object(forKey: "tagList") {
             taglist = aaa as! Array<String>
         }
     }
@@ -49,7 +49,7 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         
         // 8. title_list_showに渡す文字列をセット
-        defaults.set(taglist[indexPath.row],forKey:"searchTag")
+        defaults3.set(taglist[indexPath.row],forKey:"searchTag")
         
         //押されたセルの選択解除
         if let indexPathForSelectedRow = TableView.indexPathForSelectedRow {
@@ -59,7 +59,18 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
         performSegue(withIdentifier: "totitle_list_show",sender: nil)
         
     }
-    
+    /*
+     
+     // 8. title_list_showへ遷移するSegueを呼び出す　""内の名称を変える
+     performSegue(withIdentifier: "totitle_list_show",sender: taglist[indexPath.row])
+     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "totitle_list_show" {
+            let title_list_show = segue.destination as! title_list_show
+            title_list_show.text = sender as! String
+        }
+    }
+     */
 }
 
 

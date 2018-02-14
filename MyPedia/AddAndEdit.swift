@@ -79,6 +79,7 @@ class AddAndEdit: UIViewController {
         }
     }
     
+    /*
     // タグリストの配列とテキストボックスの内容が一致すればfalseを返し、同じ内容は追加されずアラートが発生する。
     func tag_judgment(addTag: String , tagList: Array<String>) -> Bool {
         for data in tagList{
@@ -130,5 +131,5 @@ class AddAndEdit: UIViewController {
         }
         return true
     }
-    
+    */
 }
