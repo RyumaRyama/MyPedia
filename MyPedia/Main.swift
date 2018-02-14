@@ -23,9 +23,8 @@ class Main: UIViewController {
         defaults.set("タイトル2だよ〜", forKey: "タグ1タイトル2")
         defaults.set("タイトル3だよ〜", forKey: "タグ1タイトル3")
         defaults.set("フハハ\nタイトル1だよ〜", forKey: "タグ2タイトル1")
- */
-        
-        
+ 
+        */
         
     }
 
@@ -43,5 +42,23 @@ class Main: UIViewController {
         defaults.set("", forKey:"searchTitle")
     }
     
+    @IBAction func search(_ sender: Any) {
+        // UIAlertController
+        let alertController: UIAlertController =
+            UIAlertController(title: "未実装",
+                              message: "アップデートに期待！",
+                              preferredStyle: .alert)
+        
+        let actionOK = UIAlertAction(title: "OK", style: .default){
+            action in
+            print("OK")
+        }
+        
+        // actionを追加
+        alertController.addAction(actionOK)
+        
+        // UIAlertControllerの起動
+        present(alertController, animated: true, completion: nil)
+    }
 }
 

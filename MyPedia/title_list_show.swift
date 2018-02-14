@@ -17,24 +17,24 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var title_TableView: UITableView!
     
     let defaults = UserDefaults.standard
-    var text=""
+    var selectTag=""
     var titlelist: Array<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //前の画面でセットされた文字を呼び出してtextにいれる
-        if let ccc = defaults.string(forKey: "searchTag") {
-            text = ccc
+        if let text = defaults.string(forKey: "searchTag") {
+            selectTag = text
         }
         
         //textつまり前の画面で選択されたワードのリストを持ってきてtitlelistにいれる
         
-        if let aaa = defaults.object(forKey: text) {
-            titlelist = aaa as! Array<String>
+        if let list = defaults.object(forKey: selectTag) {
+            titlelist = list as! Array<String>
         }
         
         //ラベルに前画面で選択されたワード表示
-        Label.text = text
+        Label.text = selectTag
         
         
         //枠づけ
@@ -67,7 +67,6 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        
         // content_showに渡す文字列をセット
         defaults.set(titlelist[indexPath.row],forKey:"searchTitle")
         
@@ -77,7 +76,48 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
         }
         // coctetxt_showへ遷移するSegueを呼び出す　""内の名称を変える
         performSegue(withIdentifier: "tocontent_show",sender: nil)
-        
     }
+    
+    
+    @IBAction func addTitle(_ sender: Any) {
+        defaults.set("", forKey: "searchTitle")
+    }
+    
+    
+    /*
+    //シュッてやつ
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            delete(tag: selectTag, title: titlelist[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    //内容を消すやつ
+    func delete(tag: String, title: String){
+        //タグリスト，タイトルリスト取得
+        //var tagList: Array<String> = defaults.array(forKey: "tagList") as! Array<String>
+        var titleList: Array<String> = defaults.array(forKey: tag) as! Array<String>
+        
+        //内容
+        defaults.removeObject(forKey: tag+title)
+        //タイトル
+        if let index = titleList.index(of: title){
+            titleList.remove(at: index)
+            defaults.set(titleList, forKey: tag)
+            /*
+            //タグの中にタイトルがなければタグを削除
+            if(titleList.count == 0){
+                if let tagIndex = tagList.index(of: tag){
+                    tagList.remove(at: tagIndex)
+                    defaults.set(tagList, forKey: "tagList")
+                }
+            }
+                //タイトルがまだあればdefaultsに格納
+            else{
+                defaults.set(titleList, forKey: tag)
+            }*/
+        }
+    }
+    */
 }
 

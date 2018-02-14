@@ -110,12 +110,6 @@ class AddAndEdit: UIViewController {
                     tagList.remove(at: tagIndex)
                     defaults.set(tagList, forKey: "tagList")
                 }
-                /*
-                // actionを追加
-                alertController.addAction(actionOK)
-                */
-                // UIAlertControllerの起動
-                //present(alertController, animated: true, completion: nil)
             }
         }
     }
@@ -156,5 +150,18 @@ class AddAndEdit: UIViewController {
         }
         //なければtrue
         return true
+    }
+    
+    //戻る
+    @IBAction func backButton(_ sender: Any) {
+        let storyboard: UIStoryboard = self.storyboard!
+        var page: String = ""
+        if selectTag == "" && selectTitle == ""{
+            page = "toMain"
+        }else{
+            page = "toView"
+        }
+        let nextView = storyboard.instantiateViewController(withIdentifier: page)
+        present(nextView, animated: true, completion: nil)
     }
 }

@@ -95,6 +95,7 @@ class Show: UIViewController {
         //タイトル
         if let index = titleList.index(of: title){
             titleList.remove(at: index)
+            defaults.set(titleList, forKey: tag)
             //タグの中にタイトルがなければタグを削除
             if(titleList.count == 0){
                 if let tagIndex = tagList.index(of: tag){
@@ -107,7 +108,5 @@ class Show: UIViewController {
                 defaults.set(titleList, forKey: tag)
             }
         }
-        
     }
-
 }

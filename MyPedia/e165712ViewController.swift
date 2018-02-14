@@ -61,6 +61,7 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
             userDefaults.synchronize()
         }
     }
+   
     
     // タグリストの配列とテキストボックスの内容が一致すればfalseを返し、同じ内容は追加されずアラートが発生する。
     func judgment() -> Bool {
@@ -82,11 +83,9 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
                     
                     // actionを追加
                     alertController.addAction(actionOK)
-                    print("\n\nadd\n\n")
                     
                     // UIAlertControllerの起動
                     present(alertController, animated: true, completion: nil)
-                    print("\n\n正常\n\n")
                     return false
                 }
             }

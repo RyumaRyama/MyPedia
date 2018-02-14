@@ -9,11 +9,10 @@
 import Foundation
 import UIKit
 
-class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
-{
+class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource{
     @IBOutlet var TableView: UITableView!
     
-    let defaults3 = UserDefaults.standard
+    let defaults = UserDefaults.standard
     var selectedText: String?
     var taglist: Array<String> = []
     
@@ -22,8 +21,8 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
         // Do any additional setup after loading the view, typically from a nib.
         
         //ここで他からの配列を読み込む
-        if let aaa = defaults3.object(forKey: "tagList") {
-            taglist = aaa as! Array<String>
+        if let list = defaults.array(forKey: "tagList"){
+            taglist = list as! Array<String>
         }
         
         //枠づけ
@@ -58,7 +57,7 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         
         // 8. title_list_showに渡す文字列をセット
-        defaults3.set(taglist[indexPath.row],forKey:"searchTag")
+        defaults.set(taglist[indexPath.row],forKey:"searchTag")
         
         //押されたセルの選択解除
         if let indexPathForSelectedRow = TableView.indexPathForSelectedRow {
@@ -80,6 +79,27 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource
         }
     }
      */
+    
+    //シュッてやつ
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tagDelete(tag: taglist[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    
+    func tagDelete(tag: String){
+        if var list = defaults.array(forKey: tag){
+            list = list as! Array<String>
+        }
+        for title in list{
+            defaults.removeObject(forKey: tag + title)
+        }
+        defaults.removeObject(forKey: tag)
+        taglist.remove(at: taglist.index(of: tag)!)
+        defaults.set(taglist, forKey: "tagList")
+    }
 }
 
 
