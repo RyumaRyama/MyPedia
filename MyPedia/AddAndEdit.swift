@@ -110,6 +110,12 @@ class AddAndEdit: UIViewController {
                     tagList.remove(at: tagIndex)
                     defaults.set(tagList, forKey: "tagList")
                 }
+                /*
+                // actionを追加
+                alertController.addAction(actionOK)
+                */
+                // UIAlertControllerの起動
+                //present(alertController, animated: true, completion: nil)
             }
         }
     }

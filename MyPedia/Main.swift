@@ -9,7 +9,7 @@
 import UIKit
 
 class Main: UIViewController {
-    let defaults5 = UserDefaults.standard
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,9 @@ class Main: UIViewController {
         defaults.set("タイトル3だよ〜", forKey: "タグ1タイトル3")
         defaults.set("フハハ\nタイトル1だよ〜", forKey: "タグ2タイトル1")
  */
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -100,7 +100,7 @@ class Show: UIViewController {
                 defaults.set(titleList, forKey: tag)
             }
         }
-        */
+        
         
         var i: Int = 0
         var deleteNum: Int = -1
