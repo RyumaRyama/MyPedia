@@ -6,15 +6,17 @@
 //  Copyright © 2018年 jp.ac.uryukyu.ie.e16530. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class Show: UIViewController {
-    
     let defaults = UserDefaults.standard
-    var text:String?
+    var text:Array<Any>?
     var titles:[String]?
     var titleName:String?
     var tag:String?
+    var link:Array<Any>?
+    var selectLinkList: Array<String> = []
     
     @IBOutlet weak var linkList: UITableView!
     @IBOutlet weak var textView: UITextView!
@@ -28,15 +30,24 @@ class Show: UIViewController {
         textView.layer.borderWidth = 0.5
         textView.layer.cornerRadius = 5.0
         
-        
         tag = defaults.string(forKey: "searchTag")
         titles = defaults.object(forKey: tag!) as? [String]
         titleName = defaults.string(forKey: "searchTitle")
-        text = defaults.string(forKey: tag! + titleName!)
+        text = defaults.array(forKey: tag! + titleName!)
+        link = text![1] as? Array<Any>
         
-        tagView.text=tag
-        textView.text=text
-        label.text=titleName
+        tagView.text = tag
+        textView.text = text![0] as! String
+        label.text = titleName
+        
+        //関連のタグ，タイトルを表示用にリスト化
+        for list in link!{
+            let tagTitle = list as! Array<String>
+            let tag = tagTitle[0]
+            let title = tagTitle[1]
+            selectLinkList.append(title+"("+tag+")")
+        }
+        //print()
         
         //枠づけ
         // 枠のカラー
@@ -108,5 +119,30 @@ class Show: UIViewController {
                 defaults.set(titleList, forKey: tag)
             }
         }
+    }
+    
+    //テーブル
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return selectLinkList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "linkTable", for: indexPath)
+        // セルに表示するテキストを作る
+        print(selectLinkList)
+        cell.textLabel!.text = selectLinkList[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
+        // content_showに渡す文字列をセット
+        //defaults.set(selectLink[indexPath.row],forKey:"searchTitle")
+        
+        //押されたセルの選択解除
+        if let indexPathForSelectedRow = linkList.indexPathForSelectedRow {
+            linkList.deselectRow(at: indexPathForSelectedRow, animated: true)
+        }
+        // coctetxt_showへ遷移するSegueを呼び出す　""内の名称を変える
+        performSegue(withIdentifier: "tocontent_show",sender: nil)
     }
 }

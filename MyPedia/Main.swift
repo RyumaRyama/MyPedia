@@ -15,16 +15,15 @@ class Main: UIViewController {
         super.viewDidLoad()
         defaults.set("", forKey:"searchTag")
         defaults.set("", forKey:"searchTitle")
-        /*
+        
+        
         defaults.set(["タグ1", "タグ2"], forKey: "tagList")
         defaults.set(["タイトル1", "タイトル2", "タイトル3"], forKey: "タグ1")
         defaults.set(["タイトル1"], forKey: "タグ2")
-        defaults.set("タイトル1だよ〜", forKey: "タグ1タイトル1")
-        defaults.set("タイトル2だよ〜", forKey: "タグ1タイトル2")
-        defaults.set("タイトル3だよ〜", forKey: "タグ1タイトル3")
-        defaults.set("フハハ\nタイトル1だよ〜", forKey: "タグ2タイトル1")
- 
-        */
+        defaults.set(["タイトル1だよ〜", [["タグ", "タイトル"], ["タグ", "タイトル"]]], forKey: "タグ1タイトル1")
+        defaults.set(["タイトル2だよ〜", [["タグ", "タイトル"], ["タグ", "タイトル"]]], forKey: "タグ1タイトル2")
+        defaults.set(["タイトル3だよ〜", [["タグ", "タイトル"], ["タグ", "タイトル"]]], forKey: "タグ1タイトル3")
+        defaults.set(["フハハ\nタイトル1だよ〜", [["タグ", "タイトル"], ["タグ", "タイトル"]]], forKey: "タグ2タイトル1")
         
     }
 

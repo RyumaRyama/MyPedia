@@ -127,6 +127,16 @@
                                 <rect key="frame" x="109" y="773" width="550" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="linkTable" id="qKW-jr-0pX">
+                                        <rect key="frame" x="0.0" y="28" width="550" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qKW-jr-0pX" id="Qo6-Hd-LFz">
+                                            <rect key="frame" x="0.0" y="0.0" width="550" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fco-zq-g6E">
                                 <rect key="frame" x="68" y="950" width="219" height="40"/>
@@ -189,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uY6-u0-9Lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4387.5" y="553.7109375"/>
+            <point key="canvasLocation" x="4645" y="428"/>
         </scene>
         <!--Add And Edit-->
         <scene sceneID="Vgq-7l-TyU">
@@ -288,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f54-W4-bAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5124" y="-52"/>
+            <point key="canvasLocation" x="5143" y="-502"/>
         </scene>
         <!--Title list show-->
         <scene sceneID="CXW-97-nPJ">
@@ -370,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxh-8K-5Wa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3558.59375" y="427.734375"/>
+            <point key="canvasLocation" x="3613" y="428"/>
         </scene>
         <!--Tag List Show-->
         <scene sceneID="Cup-xV-tWl">
@@ -439,7 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hz6-7e-jVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3221" y="-316"/>
+            <point key="canvasLocation" x="3319" y="-502"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dNL-Ur-id5">
@@ -533,18 +543,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99N-ql-42b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4297" y="-984"/>
+            <point key="canvasLocation" x="4161" y="-1060"/>
         </scene>
     </scenes>
     <resources>
         <image name="ロゴ.png" width="2400" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4iP-uf-Ld7"/>
+        <segue reference="5Nb-BC-RSn"/>
         <segue reference="mWN-UQ-cOm"/>
-        <segue reference="VUW-u2-hZu"/>
+        <segue reference="G2v-DA-Dh4"/>
         <segue reference="aeu-3N-B8K"/>
-        <segue reference="0Ss-qg-deL"/>
+        <segue reference="Des-Kf-pqO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

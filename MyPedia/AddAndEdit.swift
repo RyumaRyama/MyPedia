@@ -16,6 +16,7 @@ class AddAndEdit: UIViewController {
     
     var selectTag: String?
     var selectTitle: String?
+    var text: Array<Any> = ["", []]
     
     //スクリーンの情報
     let SCREEN_SIZE = UIScreen.main.bounds.size
@@ -29,7 +30,10 @@ class AddAndEdit: UIViewController {
         //タグ，タイトル，内容の画面表示
         tagText.text = selectTag
         titleText.text = selectTitle
-        textView.text = defaults.string(forKey: tagText.text! + titleText.text!)
+        if let box = defaults.array(forKey: tagText.text! + titleText.text!){
+            text = box
+        }
+        textView.text = text[0] as! String
         
         // 枠のカラー
         textView.layer.borderColor = UIColor.black.cgColor
@@ -78,7 +82,8 @@ class AddAndEdit: UIViewController {
                     delete(tag: selectTag!, title: selectTitle!)
                 }
                 //被りがない時だけメモの保存
-                write(tag: tagText.text!, title: titleText.text!, text: textView.text!)
+                text[0] = textView.text!
+                write(tag: tagText.text!, title: titleText.text!, text: text)
             }
             else{
                 print("タイトルが重複しています")
@@ -115,7 +120,7 @@ class AddAndEdit: UIViewController {
     }
     
     //保存するやつ
-    func write(tag: String, title: String, text: String){
+    func write(tag: String, title: String, text: Array<Any>){
         print("保存〜")
         //内容
         defaults.set(text, forKey: tag+title)

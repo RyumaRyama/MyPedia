@@ -28,7 +28,6 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
         }
         
         //textつまり前の画面で選択されたワードのリストを持ってきてtitlelistにいれる
-        
         if let list = defaults.object(forKey: selectTag) {
             titlelist = list as! Array<String>
         }
