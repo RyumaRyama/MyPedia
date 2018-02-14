@@ -16,7 +16,7 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var title_TableView: UITableView!
     
-    let defaults = UserDefaults.standard
+    let defaults2 = UserDefaults.standard
     var text=""
     var titlelist: Array<String> = []
     
@@ -69,7 +69,7 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         
         // content_showに渡す文字列をセット
-        defaults.set(titlelist[indexPath.row],forKey:"searchTitle")
+        defaults2.set(titlelist[indexPath.row],forKey:"searchTitle")
         
         //押されたセルの選択解除
         if let indexPathForSelectedRow = title_TableView.indexPathForSelectedRow {
@@ -79,5 +79,6 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "tocontent_show",sender: nil)
         
     }
+   
 }
 

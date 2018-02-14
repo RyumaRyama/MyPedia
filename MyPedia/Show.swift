@@ -100,5 +100,46 @@ class Show: UIViewController {
                 defaults.set(titleList, forKey: tag)
             }
         }
+        */
+        
+        var i: Int = 0
+        var deleteNum: Int = -1
+        for title in titles!{
+            if(title == titleName){
+                deleteNum = i
+            }
+            i += 1
+        }
+        if(deleteNum != -1){
+            // UIAlertController
+            let alertController: UIAlertController =
+                UIAlertController(title: "確認",
+                                  message: "削除しますか？",
+                                  preferredStyle: .alert)
+            
+            let actionOK = UIAlertAction(title: "OK", style: .default){
+                (action: UIAlertAction) in
+                print("OK")
+                self.defaults.removeObject(forKey: self.titleName!)
+                self.titles!.remove(at: deleteNum)
+                self.defaults.set(self.titles!, forKey: self.tag!)
+                self.performSegue(withIdentifier: "toMain", sender: nil)
+            }
+            
+            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel){
+                (action: UIAlertAction) in
+                print("Cancel")
+            }
+            
+            // actionを追加
+            alertController.addAction(actionOK)
+            alertController.addAction(actionCancel)
+            
+            // UIAlertControllerの起動
+            present(alertController, animated: true, completion: nil)
+            
+        }
+        
     }
+
 }

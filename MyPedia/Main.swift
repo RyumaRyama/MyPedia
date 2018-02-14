@@ -9,7 +9,7 @@
 import UIKit
 
 class Main: UIViewController {
-    let defaults = UserDefaults.standard
+    let defaults5 = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()

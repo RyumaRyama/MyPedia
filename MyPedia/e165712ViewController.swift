@@ -55,9 +55,70 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
     }
 
     @IBAction func kettei(_ sender: Any) {
-        tags.append(String(describing: textfield.text!))
-        userDefaults.set(tags, forKey:"tagList")
-        userDefaults.synchronize()
+        if (judgment2()){
+            tags.append(String(describing: textfield.text!))
+            userDefaults.set(tags, forKey:"tagList")
+            userDefaults.synchronize()
+        }
+        else if(judgment()){
+            tags.append(String(describing: textfield.text!))
+            userDefaults.set(tags, forKey:"tagList")
+            userDefaults.synchronize()
+        }
+    }
+    
+    // タグリストの配列とテキストボックスの内容が一致すればfalseを返し、同じ内容は追加されずアラートが発生する。
+    func judgment() -> Bool {
+        let objects = userDefaults.array(forKey:"tagList")
+        let textf = textfield.text!
+        for data in objects!{
+            if (textf == String(describing: data)){
+                // UIAlertController
+                let alertController: UIAlertController =
+                    UIAlertController(title: "Alert",
+                                      message: "すでに同じ名前のタグが存在します",
+                                      preferredStyle: .alert)
+                
+                let actionOK = UIAlertAction(title: "OK", style: .default){
+                    action in
+                    print("OK")
+                }
+                
+                // actionを追加
+                alertController.addAction(actionOK)
+                
+                // UIAlertControllerの起動
+                present(alertController, animated: true, completion: nil)
+                return false
+            }
+        }
+        return true
+    }
+    
+    func judgment2() -> Bool {
+        let textf = textfield.text!
+        let check = textf.replacingOccurrences(of: " ", with: "")
+        if (check.isEmpty){
+            // UIAlertController
+            let alertController: UIAlertController =
+                UIAlertController(title: "Alert",
+                                  message: "文字を入力してください",
+                                  preferredStyle: .alert)
+            
+            let actionOK = UIAlertAction(title: "OK", style: .default){
+                action in
+                print("OK")
+            }
+            
+            // actionを追加
+            alertController.addAction(actionOK)
+            
+            // UIAlertControllerの起動
+            present(alertController, animated: true, completion: nil)
+            return false
+        }
+    
+        return true
     }
     
     
