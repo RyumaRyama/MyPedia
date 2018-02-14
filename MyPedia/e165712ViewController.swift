@@ -55,12 +55,7 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
     }
 
     @IBAction func kettei(_ sender: Any) {
-        if (judgment2()){
-            tags.append(String(describing: textfield.text!))
-            userDefaults.set(tags, forKey:"tagList")
-            userDefaults.synchronize()
-        }
-        else if(judgment()){
+        if (judgment2() && judgment()){
             tags.append(String(describing: textfield.text!))
             userDefaults.set(tags, forKey:"tagList")
             userDefaults.synchronize()
@@ -71,25 +66,29 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
     func judgment() -> Bool {
         let objects = userDefaults.array(forKey:"tagList")
         let textf = textfield.text!
-        for data in objects!{
-            if (textf == String(describing: data)){
-                // UIAlertController
-                let alertController: UIAlertController =
-                    UIAlertController(title: "Alert",
-                                      message: "すでに同じ名前のタグが存在します",
-                                      preferredStyle: .alert)
-                
-                let actionOK = UIAlertAction(title: "OK", style: .default){
-                    action in
-                    print("OK")
+        if objects != nil{
+            for data in objects!{
+                if (textf == String(describing: data)){
+                    // UIAlertController
+                    let alertController: UIAlertController =
+                        UIAlertController(title: "Alert",
+                                          message: "すでに同じ名前のタグが存在します",
+                                          preferredStyle: .alert)
+                    
+                    let actionOK = UIAlertAction(title: "OK", style: .default){
+                        action in
+                        print("OK")
+                    }
+                    
+                    // actionを追加
+                    alertController.addAction(actionOK)
+                    print("\n\nadd\n\n")
+                    
+                    // UIAlertControllerの起動
+                    present(alertController, animated: true, completion: nil)
+                    print("\n\n正常\n\n")
+                    return false
                 }
-                
-                // actionを追加
-                alertController.addAction(actionOK)
-                
-                // UIAlertControllerの起動
-                present(alertController, animated: true, completion: nil)
-                return false
             }
         }
         return true
@@ -117,7 +116,7 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
             present(alertController, animated: true, completion: nil)
             return false
         }
-    
+        
         return true
     }
     
