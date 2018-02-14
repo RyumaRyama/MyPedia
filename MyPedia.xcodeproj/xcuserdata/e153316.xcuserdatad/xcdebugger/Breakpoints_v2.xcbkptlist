@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyPedia/AddAndEdit.swift"
-            timestampString = "540140274.4334919"
+            timestampString = "540313210.127349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "decision(_:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyPedia/AddAndEdit.swift"
-            timestampString = "540140274.43363"
+            timestampString = "540313210.127831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "title_judgment(addTitle:titleList:)"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "delete(tag:title:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

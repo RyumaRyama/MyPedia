@@ -43,6 +43,7 @@ class AddAndEdit: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         //ここでUIKeyboardWillHideという名前の通知のイベントをオブザーバー登録をしている
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)*/
+        
     }
     
     //UIKeyboardWillShow通知を受けて、実行される関数
@@ -81,6 +82,7 @@ class AddAndEdit: UIViewController {
                 write(tag: tagText.text!, title: titleText.text!, text: textView.text!)
             }
             else{
+                // 内容の変更が反映されないやつは修復された
                 print("タイトルが重複しています")
             }
         }
@@ -158,10 +160,16 @@ class AddAndEdit: UIViewController {
         var page: String = ""
         if selectTag == "" && selectTitle == ""{
             page = "toMain"
-        }else{
+        }
+        else if (selectTitle == ""){
+            page = "toTitleList"
+        }
+        else{
             page = "toView"
         }
         let nextView = storyboard.instantiateViewController(withIdentifier: page)
         present(nextView, animated: true, completion: nil)
     }
+    
+
 }

@@ -53,7 +53,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4E9-1N-8V8" kind="show" id="5Nb-BC-RSn"/>
+                                    <segue destination="4E9-1N-8V8" kind="modal" id="5Nb-BC-RSn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MyPedia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlP-6E-vkL">
@@ -223,10 +223,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ro-NM-aQR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ro-NM-aQR">
                                 <rect key="frame" x="109" y="367" width="550" height="517"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="550" id="8bn-GF-hBg"/>
+                                    <constraint firstAttribute="height" constant="517" id="Kgr-yI-DJc"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -281,10 +284,16 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e88-kV-P7N" firstAttribute="trailing" secondItem="3ro-NM-aQR" secondAttribute="trailing" constant="109" id="eY6-I7-ZBr"/>
+                            <constraint firstItem="e88-kV-P7N" firstAttribute="bottom" secondItem="3ro-NM-aQR" secondAttribute="bottom" constant="140" id="fnb-ww-oqz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e88-kV-P7N"/>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutConstraint" destination="3ro-NM-aQR" id="Wfv-Ch-AWK"/>
                         <outlet property="tagText" destination="uu3-On-zAi" id="92g-Xs-uyq"/>
+                        <outlet property="testConstraint" destination="fnb-ww-oqz" id="R1a-Po-NsV"/>
                         <outlet property="textView" destination="3ro-NM-aQR" id="MSf-BS-HOe"/>
                         <outlet property="titleText" destination="HsC-TI-JFY" id="jzz-q7-gsp"/>
                     </connections>
@@ -296,7 +305,7 @@
         <!--Title list show-->
         <scene sceneID="CXW-97-nPJ">
             <objects>
-                <viewController id="mcK-fO-cuU" customClass="title_list_show" customModule="MyPedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="toTitleList" id="mcK-fO-cuU" customClass="title_list_show" customModule="MyPedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ukK-33-n6G">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -542,9 +551,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="FfV-1W-jiW"/>
         <segue reference="mWN-UQ-cOm"/>
-        <segue reference="VUW-u2-hZu"/>
-        <segue reference="aeu-3N-B8K"/>
-        <segue reference="q0y-6N-A8k"/>
+        <segue reference="Td4-ch-0dc"/>
+        <segue reference="sSg-ru-IOS"/>
+        <segue reference="rcW-hh-vr4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
