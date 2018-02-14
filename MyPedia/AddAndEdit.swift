@@ -17,6 +17,9 @@ class AddAndEdit: UIViewController {
     var selectTag: String?
     var selectTitle: String?
     
+    //スクリーンの情報
+    let SCREEN_SIZE = UIScreen.main.bounds.size
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //タグ，タイトルの読み込み
@@ -35,8 +38,29 @@ class AddAndEdit: UIViewController {
         // 枠を角丸にする場合
         textView.layer.cornerRadius = 10.0
         textView.layer.masksToBounds = true
+        /*
+        //ここでUIKeyboardWillShowという名前の通知のイベントをオブザーバー登録をしている
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        //ここでUIKeyboardWillHideという名前の通知のイベントをオブザーバー登録をしている
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)*/
     }
-
+    
+    //UIKeyboardWillShow通知を受けて、実行される関数
+    func keyboardWillShow(_ notification: NSNotification){
+        let keyboardHeight = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.height
+        var frame: CGRect = textView.frame
+        frame.size.height = textView.frame.height-keyboardHeight
+        textView.frame = frame
+    }
+    
+    //UIKeyboardWillShow通知を受けて、実行される関数
+    func keyboardWillHide(_ notification: NSNotification){
+        let keyboardHeight = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.height
+        var frame: CGRect = textView.frame
+        frame.size.height = textView.frame.height-keyboardHeight
+        textView.frame = frame
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
