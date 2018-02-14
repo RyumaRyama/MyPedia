@@ -72,7 +72,7 @@ class AddAndEdit: UIViewController {
         //空白はNG
         if(tagText.text != "" && titleText.text != ""){
             //重複がなければ実行
-            if repeatCheck(){
+            if repeatCheck() || selectTitle == titleText.text{
                 //更新の時のみ一旦削除
                 if(selectTag != "" && selectTitle != ""){
                     delete(tag: selectTag!, title: selectTitle!)

@@ -59,10 +59,8 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "title_list_show_cell", for: indexPath)
-        
         // セルに表示する値を設定する
         cell.textLabel!.text = titlelist[indexPath.row]
-        
         return cell
     }
     
@@ -84,40 +82,37 @@ class title_list_show: UIViewController,UITableViewDelegate, UITableViewDataSour
     }
     
     
-    /*
     //シュッてやつ
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             delete(tag: selectTag, title: titlelist[indexPath.row])
+            print(titlelist)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     //内容を消すやつ
     func delete(tag: String, title: String){
         //タグリスト，タイトルリスト取得
-        //var tagList: Array<String> = defaults.array(forKey: "tagList") as! Array<String>
-        var titleList: Array<String> = defaults.array(forKey: tag) as! Array<String>
+        var tagList: Array<String> = defaults.array(forKey: "tagList") as! Array<String>
         
         //内容
         defaults.removeObject(forKey: tag+title)
+        
         //タイトル
-        if let index = titleList.index(of: title){
-            titleList.remove(at: index)
-            defaults.set(titleList, forKey: tag)
-            /*
+        if let index = titlelist.index(of: title){
+            titlelist.remove(at: index)
+            defaults.set(titlelist, forKey: tag)
             //タグの中にタイトルがなければタグを削除
-            if(titleList.count == 0){
+            if(titlelist.count == 0){
                 if let tagIndex = tagList.index(of: tag){
                     tagList.remove(at: tagIndex)
                     defaults.set(tagList, forKey: "tagList")
                 }
             }
-                //タイトルがまだあればdefaultsに格納
+            //タイトルがまだあればdefaultsに格納
             else{
-                defaults.set(titleList, forKey: tag)
-            }*/
+                defaults.set(titlelist, forKey: tag)
+            }
         }
     }
-    */
 }
-

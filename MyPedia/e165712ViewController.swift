@@ -26,15 +26,20 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
         if (userDefaults.array(forKey:"tagList") != nil){
         //objectsを配列として確定させ、前回の保存内容を格納
             let objects = userDefaults.array(forKey:"tagList")
-            //各名前を格納するための変数を宣言
-            var name:String!
             //前回の保存内容が格納された配列の中身を一つずつ取り出す
             for name in objects!{
                 //配列に追加していく
                 tags.append(String(describing: name))
             }
         }
-        // Do any additional setup after loading the view.
+        //枠づけ
+        // 枠のカラー
+        table.layer.borderColor = UIColor.black.cgColor
+        // 枠の幅
+        table.layer.borderWidth = 1
+        // 枠を角丸にする場合
+        table.layer.cornerRadius = 10.0
+        table.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

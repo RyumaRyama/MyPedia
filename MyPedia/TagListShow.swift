@@ -101,5 +101,3 @@ class TagListShow: UIViewController,UITableViewDelegate, UITableViewDataSource{
         defaults.set(taglist, forKey: "tagList")
     }
 }
-
-
