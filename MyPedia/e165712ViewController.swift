@@ -58,6 +58,13 @@ class e165712ViewController: UIViewController, UITextFieldDelegate,UITableViewDe
         // セルをリターンする
         return cell
     }
+    
+    func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
+        //押されたセルの選択解除
+        if let indexPathForSelectedRow = table.indexPathForSelectedRow {
+            table.deselectRow(at: indexPathForSelectedRow, animated: true)
+        }
+    }
 
     @IBAction func kettei(_ sender: Any) {
         if (judgment2() && judgment()){

@@ -137,6 +137,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ugd-Q2-GkI" id="1I0-a1-hcU"/>
+                                    <outlet property="delegate" destination="Ugd-Q2-GkI" id="mN9-vx-vbo"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fco-zq-g6E">
                                 <rect key="frame" x="68" y="950" width="219" height="40"/>
@@ -324,7 +328,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="mcK-fO-cuU" id="JSy-vv-NMW"/>
-                                    <outlet property="delegate" destination="mcK-fO-cuU" id="nco-Y2-asv"/>
+                                    <outlet property="delegate" destination="mcK-fO-cuU" id="Jji-Tg-jbi"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbg-lC-dxY">
@@ -405,8 +409,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="4E9-1N-8V8" id="vOU-6V-K6p"/>
-                                    <outlet property="delegate" destination="4E9-1N-8V8" id="fo0-HH-q07"/>
+                                    <outlet property="dataSource" destination="4E9-1N-8V8" id="Nfb-5b-hLE"/>
+                                    <outlet property="delegate" destination="4E9-1N-8V8" id="l6b-t7-ul3"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タグリスト一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjh-mw-mpT">
@@ -552,8 +556,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="5Nb-BC-RSn"/>
         <segue reference="mWN-UQ-cOm"/>
-        <segue reference="G2v-DA-Dh4"/>
-        <segue reference="aeu-3N-B8K"/>
+        <segue reference="Td4-ch-0dc"/>
+        <segue reference="sSg-ru-IOS"/>
         <segue reference="Des-Kf-pqO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

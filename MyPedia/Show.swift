@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Show: UIViewController {
+class Show: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let defaults = UserDefaults.standard
     var text:Array<Any>?
     var titles:[String]?
@@ -47,7 +47,6 @@ class Show: UIViewController {
             let title = tagTitle[1]
             selectLinkList.append(title+"("+tag+")")
         }
-        //print()
         
         //枠づけ
         // 枠のカラー
@@ -129,20 +128,49 @@ class Show: UIViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "linkTable", for: indexPath)
         // セルに表示するテキストを作る
-        print(selectLinkList)
         cell.textLabel!.text = selectLinkList[indexPath.row]
         return cell
     }
     
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        // content_showに渡す文字列をセット
-        //defaults.set(selectLink[indexPath.row],forKey:"searchTitle")
+        //リンク先のタグ，タイトル取得
+        let tagTitle = link![indexPath.row] as! Array<String>
+        
+        //リンク先設定
+        defaults.set(tagTitle[0],forKey:"searchTag")
+        defaults.set(tagTitle[1],forKey:"searchTitle")
+        print(tagTitle[0])
+        print(tagTitle[1])
         
         //押されたセルの選択解除
         if let indexPathForSelectedRow = linkList.indexPathForSelectedRow {
             linkList.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
-        // coctetxt_showへ遷移するSegueを呼び出す　""内の名称を変える
-        performSegue(withIdentifier: "tocontent_show",sender: nil)
+        
+        //再読み込み
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "toView") as! Show
+        self.present(nextView, animated: true, completion: nil)
+    }
+    
+    //更新
+    func memoReload(){
+        tag = defaults.string(forKey: "searchTag")
+        titles = defaults.object(forKey: tag!) as? [String]
+        titleName = defaults.string(forKey: "searchTitle")
+        text = defaults.array(forKey: tag! + titleName!)
+        link = text![1] as? Array<Any>
+        
+        tagView.text = tag
+        textView.text = text![0] as! String
+        label.text = titleName
+        
+        //関連のタグ，タイトルを表示用にリスト化
+        for list in link!{
+            let tagTitle = list as! Array<String>
+            let tag = tagTitle[0]
+            let title = tagTitle[1]
+            selectLinkList.append(title+"("+tag+")")
+        }
     }
 }
